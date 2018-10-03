@@ -1,0 +1,49 @@
+<!-- Google Analytics -->
+<script async>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', '{{ site.google_analytics }}', 'auto');
+	ga('send', 'pageview', {
+	  'page': '{{ site.baseurl }}{{ page.url }}',
+	  'title': '{{ page.title | replace: "'", "\\'" }}'
+	});
+
+    // contact us modal connected to google sheet
+    const scriptURL = "https://script.google.com/macros/s/AKfycbwaM-iq4ySEsKM5BUBrlRPV-wxcgoBmLGOlUKBiVtDdB8SGCX4J/exec";
+    const form = document.forms['contact'];
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => console.log('Success!', response))
+            .catch(error => console.error('Error!', error.message))
+    });
+
+    let btn = document.getElementById('open-modal');
+    let modal = document.getElementById('contact');
+    let sendBtn = document.getElementById('sendBtn');
+    let x = document.querySelector('.x');
+
+    btn.onclick = function () {
+        modal.style.display = "block";
+        modal.style.visibility = "visible";
+    };
+
+    // close modal with escape btn
+    document.addEventListener("keydown", function(e) {
+        if (e.which === 27) {
+            modal.style.display = "none";
+        }
+    });
+
+    // close modal on outside click, clicking send or x
+    window.onclick = function(event) {
+        if (event.target === modal || event.target === sendBtn || event.target === x) {
+            modal.style.display = "none";
+        }
+    };
+</script>
+
+

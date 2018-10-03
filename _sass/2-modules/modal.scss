@@ -1,0 +1,192 @@
+.modal {
+  content: "";
+  position: fixed;
+  display: none;
+  visibility: hidden;
+  background-color: rgba(0,0,0,0.4);
+  top: 0; left: 0; right: 0; bottom: 0;
+  height: 100%;
+  width: 100%;
+  //transition: all .5s ease-in-out;
+  z-index: 1;
+}
+.modal-body {
+  @include absCenter;
+  margin: 5% auto;
+  position: fixed;
+  z-index: 1;
+  width: 65rem;
+  height: 55rem;
+  //transition: all .3s ease-in-out;
+}
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  input {
+    box-sizing: border-box;
+    background: $light1-blue;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid $cold-blue;
+    width: 80%;
+    margin: 2rem 10%;
+    color: $cold-blue;
+    font-size: 1.8rem;
+    line-height: 3.5rem;
+    padding-left: 2rem;
+    &::placeholder {
+      color: inherit;
+      letter-spacing: 1px;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}
+.form {
+  position: absolute;
+  top: -8%;
+  left: 5%;
+  background: $light1-blue;
+  width: 35rem;
+  height: 50rem;
+  border-radius: 5px;
+  box-shadow: 2px 0 10px rgba(0,0,0,.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .x {
+    color: $cold-blue;
+    font-size: 3rem;
+    position: absolute;
+    left: 2rem; top: 1.5rem;
+    border: .5px solid $light2-blue;
+    background: $light1-blue;
+    border-radius: 5px;
+    padding: 0 1rem .4rem 1rem;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+
+    @include respond(sm-phone) {
+      font-size: 4rem;
+    }
+  }
+
+  &__heading {
+    color: $cold-blue;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 2.6rem;
+
+    @include respond(mid-header) {
+      font-size: 2rem;
+    }
+  }
+  .btn {
+    background: $cold-blue;
+    color: $light1-blue;
+    transition: transform .2s;
+    a {
+      @extend .btn;
+    }
+    &:focus, &:active {
+      outline: none;
+      transform: scale(1.1);
+    }
+    @include respond(sm-phone) {
+      padding: 1rem 1.4rem;
+      font-size: 1.3rem;
+    }
+  }
+
+  @include respond(mid-header) {
+    width: 30rem;
+    height: 48rem;
+  }
+  @media screen and (max-width: 560px) {
+    left: 25%;
+    margin-top: 15%;
+  }
+}
+.postcard {
+  position: absolute;
+  width: 70rem;
+  height: 42rem;
+  border-radius: 5px;
+  box-shadow: 2px 0 10px rgba(0,0,0,.1);
+  background-image: linear-gradient(top, #3F5A9E, #102A5E);
+  background-image: -webkit-linear-gradient(top, #3F5A9E, #102A5E);
+  z-index: -1;
+  display: flex;
+  justify-content: flex-end;
+
+  &__heading {
+    @extend .form__heading;
+    font-size: 2.8rem;
+    color: #fcfcfc;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 10% 15%;
+  }
+
+  //&::after {
+  //  content: "×";
+  //  color: white;
+  //  font-size: 3rem;
+  //  margin: 1rem 2rem;
+  //}
+  
+  @include respond(mid-header) {
+    width: 65rem;
+    height: 37rem;
+  }
+  @include respond(xl-phone) {
+    width: 60rem;
+  }
+  @media screen and (max-width: 560px) {
+    display: none;
+  }
+}
+
+input {
+  //box-sizing: border-box;
+  //background: $light1-blue;
+  //border: none;
+  //border-radius: 0;
+  //border-bottom: 1px solid $cold-blue;
+  //width: 80%;
+  //margin: 2rem 10%;
+  //color: $cold-blue;
+  //font-size: 1.8rem;
+  //line-height: 3.5rem;
+  //padding-left: 2rem;
+  //&::placeholder {
+  //  color: inherit;
+  //  letter-spacing: 1px;
+  //}
+  //&:focus {
+  //  outline: none;
+  //}
+}
+
+svg {
+  width: 20rem;
+  height: auto;
+  position: absolute;
+  top: 33%; left: 66%;
+
+  @include respond(xl-phone) {
+    width: 15rem;
+  }
+}

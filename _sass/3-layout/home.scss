@@ -1,0 +1,165 @@
+.main {
+  display: flex;
+  //flex: 1 0 auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .explore {
+    font-weight: 500;
+    font-size: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin: 3% auto 0 auto;
+    color: $dark-blue;
+    letter-spacing: 1px;
+
+    @include respond(column) {
+      font-size: 1.6rem;
+    }
+  }
+
+  .arrow {
+    margin: 0 auto 5rem auto;
+    height: 2.5rem;
+    width: 2.5rem;
+    border-style: solid;
+    border-color: $dark-blue;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    transition: border-width .3s ease-in-out;
+
+    &:hover {
+      border-bottom-width: 4px;
+      border-right-width: 4px;
+    }
+
+    @include respond(column) {
+      height: 2rem;
+      width: 2rem;
+      &:hover {
+        border-bottom-width: 3px;
+        border-right-width: 3px;
+      }
+    }
+  }
+
+  .main-group {
+    font-family: "Avenir Next", $avenir;
+    color: $dark-blue;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    max-width: 1200px;
+
+    .heading {
+      width: 30vw;
+      max-width: 60rem;
+
+      @media screen and (min-width: 960px) {
+        margin-left: 3rem;
+      }
+
+      &__primary {
+        font-size: 3.5rem;
+        text-transform: uppercase;
+        width: 45vw;
+        margin-bottom: 1rem;
+        align-self: center;
+      }
+
+      &__secondary {
+        font-size: 1.6rem;
+        font-weight: 500;
+        margin-bottom: .5rem;
+        @media screen and (min-width: 960px) {
+          max-width: 392px;
+        }
+      }
+
+      &__tertiary {
+        color: $grey-blue;
+        font-size: 1.4rem;
+        font-weight: 400;
+        margin-bottom: 2.5rem;
+        @media screen and (min-width: 960px) {
+          max-width: 445px;
+        }
+        @include respond(sm-phone) {
+          font-weight: 500;
+        }
+      }
+    }
+
+    .mainImg {
+      width: 40vw;
+      max-width: 646px;
+      height: auto;
+      align-self: center;
+      margin-bottom: 2rem;
+
+      @media screen and (min-width: 960px) {
+        width: 68vw;
+      }
+      @include respond(xl-phone){
+        max-width: 646px;
+      }
+      @include respond(xs-phone) {
+        min-width: 300px;
+      }
+    }
+
+    @include respond(column2) {
+
+      flex-direction: column;
+      justify-content: center;
+      margin-bottom: 2rem;
+
+      .heading {
+        align-self: center;
+        text-align: center;
+        width: 75vw;
+
+        &__primary {
+          font-size: 2.5rem;
+          margin: 1rem auto;
+        }
+        &__secondary {
+          font-size: 1.8rem;
+          margin-bottom: .5rem;
+        }
+      }
+
+      .mainImg {
+        order: -1;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

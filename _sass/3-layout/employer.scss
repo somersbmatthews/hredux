@@ -1,0 +1,291 @@
+@font-face {
+  font-family: "Frankin Gothic";
+  src: url("../../assets/fonts/franklin_gothic_heavy.ttf");
+}
+
+.learn-heading {
+  @include text;
+  font-size: 2.4rem;
+  color: $dark-blue;
+  margin: 10rem auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  &:target {
+    margin-top: -1.2rem;
+    padding-top: 6rem;
+  }
+
+  &::after {
+    content:' ';
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+    left: 0; right: 0;
+    width: 12rem;
+    text-align: center;
+    border: 1px solid $dark-blue;
+    border-radius: 2px;
+
+    @include respond(m-phone) {
+      width: 10rem;
+      margin: 4rem auto;
+    }
+  }
+
+  @include respond(m-phone) {
+    font-size: 2rem;
+    margin: 5rem auto 3rem auto;
+  }
+}
+
+.learn {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 2rem;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    text-decoration: none;
+    width: 20rem;
+    height: 22rem;
+    transition: all .3s;
+
+    @include respond(mid-header) {
+      width: 18rem;
+      height: 20rem;
+    }
+    @include respond(m-phone) {
+      width: 16rem;
+      height: 18rem;
+    }
+
+    &:not(:last-child) {
+      margin-right: 1.3rem;
+    }
+    &:hover {
+      background-color: $light1-blue;
+    }
+
+    &__img{
+      height: 12rem;
+      width: auto;
+      margin-bottom: 2rem;
+      align-self: center;
+
+      @include respond(mid-header) {
+        height: 10rem;
+      }
+      @include respond(m-phone) {
+        height: 8rem;
+      }
+      @include respond(xl-phone) {
+        margin-bottom: 1rem;
+      }
+    }
+
+    &__text {
+      @include text;
+      align-self: center;
+      color: $dark-blue;
+      border-bottom: 2px solid transparent;
+
+      &:hover {
+        border-bottom: 2px solid $dark-sky-blue;
+      }
+    }
+  }
+}
+
+/////// LIST /////////
+
+.list-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 5% auto;
+
+  &:target {
+    z-index: 100;
+    margin-top: -1.2rem;
+    padding-top: 6rem;
+  }
+  @media screen and (min-width: 800px) {
+    margin: 10% auto;
+    max-width: 90%;
+  }
+  @include respond(mid-header) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .list-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: $light1-blue;
+    width: 40%;
+    height: auto;
+    padding: 3rem 2rem;
+    border-radius: 3px;
+
+    @include respond(row) {
+      min-height: 320px;
+      padding: 6rem 2rem;
+    }
+    @include respond(mid-header) {
+       width: 60%;
+    }
+    @include respond(l-phone) {
+      width: 75%;
+    }
+
+    &--blue {
+      @include respond(mid-header) {
+        width: 50%;
+      }
+    }
+
+    &--2 {
+      position: relative;
+      @extend .list-box;
+      align-items: center;
+      background-color: #fff;
+      height: auto;
+      padding: 0;
+    }
+
+    &__item {
+      align-self: center;
+      margin-left: 10%;
+      width: 75%;
+      position: relative;
+      z-index: 1;
+
+      &:not(:last-child) {
+        margin-bottom: 3rem;
+      }
+
+      &--3 {
+        &:first-child {
+          margin-top: 3rem;
+        }
+        @include respond(mid-header) {
+          margin-left: 0;
+        }
+      }
+
+      &--1 {
+        @include blueBox;
+        @include respond(sm-phone) {
+          width: 100% !important;
+        }
+      }
+
+      &__primary {
+        @include bullet;
+        font-size: 2.8rem;
+        color: $dark-blue;
+        margin-bottom: 1rem;
+        font-family: Frankin Gothic, Heavy, 'Chivo', sans-serif;
+        text-transform: uppercase;
+        font-weight: 400;
+
+        @include respond(mid-header) {
+          font-size: 2.4rem;
+        }
+        @include respond(sm-phone) {
+          font-size: 2rem;
+        }
+      }
+
+      &__secondary {
+        color: $grey-blue;
+        font-size: 1.8rem;
+        font-weight: 400;
+
+        &:not(:last-child){
+          margin-bottom: 1.5rem;
+        }
+
+        @include respond(mid-header) {
+          font-size: 1.6rem;
+        }
+      }
+
+      &__tertiary {
+        @include text;
+        font-size: 1.4rem;
+        text-align: left;
+        margin-bottom: 2rem;
+
+        @include respond(l-phone){
+          font-size: 1.2rem;
+          letter-spacing: 0;
+        }
+      }
+
+      &__img {
+        height: 5.5rem;
+        width: auto;
+
+        &:first-child {
+          margin-bottom: 3rem;
+        }
+
+        @include respond(l-phone){
+          height: 4rem;
+        }
+        @include respond(sm-phone){
+          height: 3rem;
+        }
+      }
+    }
+  }
+}
+.fine-print {
+  font-size: 1rem;
+  color: $grey-blue;
+  @include respond(l-phone){
+    font-size: 6px;
+  }
+}
+.slider {
+  width: 100%;
+  height: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

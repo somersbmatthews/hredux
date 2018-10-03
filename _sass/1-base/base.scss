@@ -1,0 +1,79 @@
+*,
+*::after,
+*::before{
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+
+  //@include respond(big-desktop) {
+  //  font-size: 75%;
+  //}
+  @include respond(laptop) {
+    font-size: 70%;
+  }
+  @include respond(tab-land) {  // width < 1200?
+    font-size: 56.25%;
+  }
+  @include respond(tab-port) { // width < 900?
+    font-size: 50%;
+  }
+  @include respond(xl-phone) { // width < 900?
+    font-size: 40%;
+  }
+}
+
+body{
+  box-sizing: border-box;
+  font-family: "Avenir Next", $avenir;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  background-color: #fff;
+  overflow-x: hidden;
+}
+
+.max-width {
+  max-width: $max-page-width;
+  margin: 0 auto;
+}
+
+.flex-col-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.full-screen {
+  min-height: 100vh;
+  //max-height: 100vh;
+  margin: 0 auto;
+  max-width: $max-page-width;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-height: 100vh;
+  min-width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.wrapper-small {
+  display: flex;
+  flex-direction: column;
+  max-height: 75vh;
+  min-height: 500px;
+  min-width: 100vw;
+  max-width: 1200px;
+}
+
+.container {
+  margin: 5rem 5rem 0 5rem;
+  flex: 1 0 auto;
+}

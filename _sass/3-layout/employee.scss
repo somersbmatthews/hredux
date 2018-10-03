@@ -1,0 +1,204 @@
+.chart-img {
+  height: 25rem;
+  width: auto;
+
+  @include respond(l-phone) {
+    height: 20rem;
+  }
+  @include respond(sm-phone) {
+    height: 15rem;
+  }
+
+  &--1 {
+    @include respond(m-phone) {
+      height: 17rem;
+    }
+    @include respond(sm-phone) {
+      height: 12rem;
+    }
+  }
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.list-support {
+
+  &__primary {
+    @extend .list-box__item__primary;
+    text-align: center;
+
+    &::before {
+      content: none !important;
+    }
+  }
+
+  &__secondary {
+    @extend .list-box__item__secondary;
+    margin-bottom: 4rem !important;
+  }
+
+  .list-icons {
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    position: relative;
+    z-index: 1;
+
+    & > * {
+      @include blueBox;
+      margin: 2rem;
+      padding: 2rem;
+
+      &::before {
+        margin: -5rem 0 0 -7rem;
+        right: 4rem;
+        height: 10rem;
+        width: 11rem;
+        border-radius: 3px;
+
+        @include respond(xl-phone) {
+          height: 7rem;
+          width: 8rem;
+          right: 3rem;
+          margin: -4rem 0 0 -5rem;
+        }
+
+        @include respond(m-phone) {
+          height: 5rem;
+          width: 6rem;
+          right: 2rem;
+          margin: -4rem 0 0 -5rem;
+        }
+      }
+
+      @include respond(m-phone) {
+        margin: 0 1rem;
+        padding: 1rem;
+      }
+    }
+
+    &__img {
+      height: 8rem;
+      width: auto;
+
+      @include respond(xl-phone) {
+        height: 6.5rem;
+      }
+      @include respond(m-phone) {
+        height: 5rem;
+      }
+
+    }
+    &__text {
+      text-align: center;
+      @include text;
+      font-size: 1.4rem;
+      font-weight: 500;
+      margin-top: 2rem;
+    }
+  }
+}
+
+.blink-container {
+  position: relative;
+
+  .blink {
+    position: absolute;
+    bottom: 21rem; right: 24rem;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    border: .4rem solid $dark-sky-blue;
+    background-color: white;
+    animation: blink 1.5s ease-out infinite;
+
+    @include respond(l-phone) {
+      bottom: 17rem; right: 20rem;
+    }
+    @include respond(m-phone) {
+      bottom: 14rem; right: 16rem;
+    }
+    @include respond(sm-phone) {
+      bottom: 10rem; right: 11rem;
+      height: 1.5rem;
+      width: 1.5rem;
+      border: .3rem solid $dark-sky-blue;
+    }
+  }
+}
+.blink-text {
+  position: absolute;
+  bottom: 21.5rem;
+  right: 7rem;
+  color: $dark-sky-blue;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-left: 3rem;
+
+  @include respond(tab-port) {
+    right: 9rem;
+  }
+  @include respond(xl-phone) {
+    right: 12rem;
+  }
+  @include respond(l-phone) {
+    bottom: 18rem; right: 9rem;
+    font-size: 1.4rem;
+  }
+  @include respond(m-phone) {
+    bottom: 15rem; right: 5rem;
+    font-size: 1.2rem;
+  }
+  @include respond(sm-phone) {
+    bottom: 10.55rem; right: 0;
+  }
+}
+
+@keyframes blink {
+  0% {
+    box-shadow: 0 0 1rem $grey-blue;
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+    box-shadow: 0 0 0 $grey-blue;
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 3rem $grey-blue;
+  }
+  75% {
+    opacity: 1;
+    box-shadow: 0 0 0 $grey-blue;
+  }
+  100% {
+    box-shadow: 0 0 1rem $grey-blue;
+    opacity: 1;
+  }
+  //from {
+  //  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.4);
+  //  transform: scale(1.15);
+  //}
+  //
+  //to {
+  //  box-shadow: 0 0 0 1.2rem rgba(0, 0, 0, 0);
+  //}
+}
+
+
+
+
+
+
+
+
+
+
+
+

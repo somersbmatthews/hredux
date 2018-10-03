@@ -1,0 +1,49 @@
+.choice {
+  display: flex;
+  display: -webkit-box;
+  align-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 2rem auto;
+
+  .employer, .employee {
+    width: 50%;
+    height: 25rem;
+    color: $dark-blue;
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: .5rem solid transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: border .7s;
+
+    &:hover, &:focus, &:active {
+      border-bottom: .5rem solid $dark-sky-blue;
+    }
+  }
+  .employer {
+    background-color: $hover-light-blue;
+  }
+  .employee {
+    background-color: $non-hover-light-blue;
+  }
+
+  .img {
+    height: 12rem;
+    width: auto;
+    align-self: center;
+
+    @include respond(mid-header) {
+      height: 10rem;
+    }
+    @include respond(sm-phone) {
+      height: 8rem;
+    }
+  }
+
+  .text {
+    @include text;
+    font-size: 1.6rem;
+  }
+}

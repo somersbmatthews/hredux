@@ -1,0 +1,136 @@
+@mixin respond($breakpoint) {
+  @if $breakpoint == xs-phone {
+    @media (max-width: 25em) { @content } //320px
+  }
+  @if $breakpoint == sm-phone {
+    @media (max-width: 400px) { @content } //400px
+  }
+  @if $breakpoint == m-phone {
+    @media (max-width: 31.25em) { @content } //500px
+  }
+  @if $breakpoint == l-phone {
+    @media (max-width: 37.5em) { @content } //600px
+  }
+  @if $breakpoint == column {
+    @media (max-width: 610px) { @content } //610px
+  }
+  @if $breakpoint == xl-phone {
+    @media (max-width: 43.125em) { @content } //690px
+  }
+  @if $breakpoint == mid-header {
+    @media (max-width: 800px) { @content } //800px
+  }
+  @if $breakpoint == tab-port {
+    @media (max-width: 56em) { @content } //900px
+  }
+  @if $breakpoint == column2 {
+    @media (max-width: 960px) { @content } //960px
+  }
+  @if $breakpoint == laptop {
+    @media (max-width: 1024px) { @content } //1024px
+  }
+  @if $breakpoint == tab-land {
+    @media (max-width: 75em) { @content } //1200px
+  }
+  @if $breakpoint == row {
+    @media (min-width: 800px) { @content }
+  }
+}
+
+@mixin text {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: $dark-blue;
+}
+
+@mixin bullet {
+  &::before {
+    content:" ";
+    position: absolute;
+    font-family:sans-serif;
+    border-radius: 50%;
+    background-color: $dark-sky-blue;
+    margin: 1rem 0 0 -4rem;
+    align-self: center;
+    height: 1.5rem;
+    width: 1.5rem;
+
+    @include respond(mid-header){
+      margin: .5rem 0 0 -3rem;
+    }
+    @include respond(sm-phone){
+      margin: .5rem 0 0 -2rem;
+      height: 1rem;
+      width: 1rem;
+    }
+  }
+}
+
+@mixin blueBox {
+  &::before {
+    content: " ";
+    background-color: $light1-blue;
+    height: 12rem;
+    width: 13rem;
+    position: absolute;
+    margin: -4rem 0 0 -10rem;
+    z-index: -1;
+
+    @include respond(mid-header) {
+      height: 10rem;
+      width: 11rem;
+      margin: -4rem 0 0 -6rem;
+    }
+    @include respond(sm-phone) {
+      height: 7rem;
+      width: 8rem;
+      margin: -2.5rem 0 0 -5.5rem;
+    }
+  }
+}
+
+@mixin linkHover {
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: 0; left: 0;
+    background-color: $light1-blue;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+  }
+  &:hover:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+}
+
+@mixin absCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin shadow {
+  box-shadow: 1px 1px 1px #000000, 0 0 1px #0d0d0d;
+}
+
+@mixin underline {
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: hsla(0,0%,100%,.3);
+    height: 10px;
+    width: 103%;
+    bottom: 2px;
+  }
+}

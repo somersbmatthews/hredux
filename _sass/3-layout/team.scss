@@ -1,0 +1,106 @@
+//employee text //
+.team {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  max-width: 120rem;
+  margin-bottom: 2rem;
+  font-family: 'Avenir Next', $avenir;
+  color: $dark-blue;
+
+  &__heading {
+    margin: 0 4rem;
+    font-weight: 600;
+    font-size: 2.2rem;
+    align-self: flex-start;
+  }
+
+  &__secondary {
+    font-size: 1.6rem;
+    width: 55%;
+    margin-bottom: 2rem;
+  }
+
+  &__link {
+    font-family: inherit;
+    color: $dark-blue;
+    font-weight: 600;
+  }
+
+  @media screen and (max-width: 700px) {
+    flex-direction: column;
+
+    &__heading {
+      margin-bottom: 1.5rem;
+      align-self: center;
+      text-align: left;
+    }
+    &__secondary {
+      width: 80%;
+    }
+  }
+}
+
+// employee icons //
+.employees-container {
+  flex-grow: 1;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: $max-page-width;
+  margin: 1.5rem 3rem;
+
+
+  .employees {
+    display: flex;
+    flex-wrap: wrap;
+    //margin: 0 1rem;
+    margin-bottom: auto;
+
+    @include respond(column) {
+      height: 16rem;
+    }
+
+    &:nth-child(2) {
+      @media screen and (max-width: 530px) {
+        width: 224px;
+      }
+    }
+
+    &__img {
+      height: 15rem;
+      width: auto;
+      margin: 0 2rem 3rem 0;
+
+      @include respond(mid-phone) {
+        margin: 0;
+      }
+    }
+
+    .text-box{
+      align-self: center;
+      margin-right: 2rem;
+
+      &:first-child {
+        font-size: 1.6rem;
+        font-weight: 400;
+      }
+
+      &:nth-child(2) {
+        font-size: 1.4rem;
+        font-weight: 400;
+      }
+    }
+
+    a{
+      text-decoration: none;
+      color: $dark-blue;
+
+      &:hover {
+        color: $bright-blue;
+      }
+    }
+  }
+}

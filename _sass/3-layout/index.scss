@@ -1,0 +1,212 @@
+@font-face {
+  font-family: joystix monospace;
+  src: url("../../assets/fonts/pixel-font.ttf");
+}
+
+.index-container {
+  min-height: 100vh;
+  max-height: 100vh;
+  min-width: 100vw;
+  background-color: black;
+  font-family: joystix monospace;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  .navigation {
+    align-self: flex-end;
+    padding: 4rem 3rem;
+    margin-right: 5rem;
+    word-spacing: 2rem;
+
+    .link-text {
+      color: #fff;
+      font-size: 2rem;
+      text-decoration: none;
+    }
+
+    &__link {
+      color: #fff;
+      font-size: 2rem;
+      word-spacing: 0;
+
+      &:hover {
+        color: $yellow;
+      }
+    }
+    .index-login {
+      text-decoration: none;
+    }
+
+    @media screen and (max-width: 420px) {
+      margin-right: 1.5rem;
+      word-spacing: 1rem;
+      &__link, .link-text {
+        font-size: 1rem;
+      }
+      &__btn {
+       padding: .8rem 1.5rem;
+      }
+    }
+  }
+
+  .btn {
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    text-align: center;
+    padding: 1.2rem 2.2rem;
+    text-decoration: none;
+    border: 2px solid #fff;
+    color: #fff;
+    background-color: black;
+    outline: none;
+
+    &:hover {
+      color: $yellow;
+      border: 2px solid $yellow;
+    }
+
+    &:active {
+      background-color: $yellow;
+      color: black;
+      font-weight: bold;
+    }
+
+    @include respond(m-phone) {
+      padding: .9rem 1.6rem;
+    }
+  }
+
+  .index-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 3rem;
+
+
+    .coin {
+      margin-top: 5rem;
+      max-width: 20rem;
+      width: 100%;
+      height: auto;
+
+      @include respond(m-phone) {
+        width: 14rem;
+      }
+    }
+
+    .typewriter h1 {
+      overflow: hidden;
+      border-right: 1rem solid white;
+      white-space: nowrap;
+
+      text-transform: uppercase;
+      font-size: 4.5rem;
+      text-align: center;
+      align-self: center;
+      color: $yellow;
+      margin: 0 auto;
+      width: 80rem;
+
+      @include respond(l-phone) {
+        font-size: 3.8rem;
+      }
+      @include respond(m-phone) {
+        font-size: 2.8rem;
+      }
+      @include respond(sm-phone) {
+        font-size: 2.3rem;
+      }
+    }
+
+    .typewriter h1:nth-child(1) {
+      width: 100%;
+      animation: type 2s steps(40, end),
+      blink-cursor .7s step-end infinite;
+      animation-fill-mode: forwards;
+    }
+
+    .typewriter h1:nth-child(2) {
+      width: 100%;
+      opacity: 0;
+      animation: type2 2.5s steps(40, end),
+      blink-cursor .7s step-end infinite;
+      animation-delay: 2s;
+      animation-fill-mode: forwards;
+    }
+
+    .btn--large {
+      text-transform: uppercase;
+      font-family: joystix monospace;
+
+      opacity: 0;
+      animation: fadeIn 2s;
+      animation-delay: 4.5s;
+      animation-fill-mode: forwards;
+    }
+  }
+
+}
+
+
+@keyframes fadeIn {
+  from, to { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes blink-cursor {
+  from, to { border-color: transparent }
+  50% { border-color: white }
+}
+
+
+@keyframes type {
+  0% {
+    width: 0;
+  }
+  99.9% {
+    border-right: 1rem solid white;
+  }
+  100% {
+    border: none;
+  }
+
+}
+
+@keyframes type2 {
+  0% {
+    width: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  99.9% {
+    border-right: 1rem solid white;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

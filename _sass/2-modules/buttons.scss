@@ -1,0 +1,52 @@
+.btn {
+  font-family: "Avenir Next", $avenir;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+  border-radius: 2px;
+  border: none;
+  text-align: center;
+  padding: 1rem 1.4rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color, transform .3s;
+
+  &:focus {
+    outline: none;
+  }
+
+  &--1 {
+    color: $strong-red;
+    border: 2px solid $strong-red;
+
+    &:hover {
+      background-color: $strong-red;
+      color: #fff;
+    }
+  }
+
+  &--2 {
+    color: white;
+    background-color: $strong-red;
+
+    &:hover {
+      background-color: #fff;
+      color: $strong-red;
+      border: 2px solid $strong-red;
+    }
+  }
+
+  @include respond(sm-phone) {
+    padding: .6rem .8rem;
+    font-size: 1rem;
+  }
+}
+
+.btn-small {
+  padding: .8rem 1.2rem;
+}
+
+
+.typeform-share .button.general, .button.nav, .button.general {
+  color: white;
+}

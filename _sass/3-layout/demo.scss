@@ -1,0 +1,267 @@
+b { font-weight: 600; text-transform: uppercase; }
+.column__img {
+  width: 20rem;
+  height: auto;
+
+  @include respond(l-phone) {
+    width: 15rem;
+  }
+}
+
+.dropdown-container {
+  margin: 2rem auto;
+  display: flex;
+  justify-content: space-around;
+
+  @include respond(tab-port) {
+    flex-direction: column;
+  }
+}
+
+.menu-header{
+  border-radius: .5rem;
+  color: $dark-blue;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 2rem 1rem;
+  background: linear-gradient(to bottom, $light1-blue, $light2-blue);
+  text-align: center;
+  margin: 1rem auto;
+}
+
+.ac {
+  box-sizing: border-box;
+
+}
+.ac-label {
+  font-weight: 700;
+  font-family: "Avenir Next", Chivo, sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  color: $dark-blue;
+  border-radius: .5rem;
+  position: relative;
+  padding: 1rem;
+  margin: 0 auto;
+  display: block;
+  cursor: pointer;
+  background: linear-gradient(to bottom right, $light1-blue, $light2-blue);
+  transition: background-color .2s ease-in-out;
+
+  max-width: 40rem;
+
+  @include respond(m-phone) {
+    width: 30rem;
+  }
+}
+
+.ac-input:checked + label, .ac-label:hover {
+  background: linear-gradient(to bottom left, $light1-blue, $light2-blue 60%);
+}
+
+
+.ac-label::after, .ac-input:checked + .ac-label::after {
+  content: "+";
+  position: absolute;
+  border-radius: .2rem;
+  right: 0; top: 0;
+  width: 4rem;
+  line-height: 2.5em;
+  height: 100%;
+  text-align: center;
+  background-color: $dark-sky-blue;
+  transition: background-color .2s ease-in-out;
+
+  @include respond(xl-phone) {
+    line-height: 3em;
+  }
+}
+
+.ac-label:hover::after  {
+  background: rgba($dark-sky-blue, .7);
+  //background: darken($dark-sky-blue, 10%);
+}
+
+.ac-input:checked + .ac-label::after {
+  content: "-";
+  background: rgba($dark-sky-blue, .7);
+}
+
+.ac-input {
+  display: none;
+}
+
+.ac-popup--2 {
+  opacity: 0;
+  height: 0;
+  transition: opacity .5s ease-in-out;
+  overflow: hidden;
+  margin: .5em auto;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.ac-popup, .ac-sub-popup {
+  opacity: 0;
+  height: 0;
+  transition: opacity .5s ease-in-out;
+  overflow: hidden;
+  margin: 0 auto;
+  background: linear-gradient(to bottom, #FCFCFC, $light1-blue);
+  box-shadow: 4px 1px 1.3rem rgba($grey-blue, .15);
+  border-radius: .5rem;
+}
+
+.ac-input:checked ~ .ac-popup, .ac-sub .ac-input:checked ~ .ac-sub-popup {
+  color: $dark-blue;
+  opacity: 1;
+  height: auto;
+  padding: 1rem 2rem;
+  margin: .75rem auto 1.25rem auto;
+
+  & p {
+    opacity: 0;
+    animation: fadeIn 1.25s ease-in 0s forwards;
+
+    & + p {
+       animation-delay: .3s;
+    }
+    &:nth-child(4) {
+      animation-delay: .7s;
+    }
+    &:nth-child(5) {
+      animation-delay: .9s;
+    }
+  }
+}
+
+.ac-sub .ac-label {
+  background: none;
+  font-weight: 600;
+  padding: .5rem 3rem;
+  margin-bottom: 0;
+}
+
+.ac-popup {
+  max-width: 40rem;
+  padding: 1rem 2rem;
+  font-size: 1.4rem;
+
+  &__img {
+    margin: 0 auto;
+    display: flex;
+    margin-bottom: 2rem;
+
+    &--1 {
+      width: 35rem;
+      height: auto;
+
+      @include respond(m-phone) {
+        width: 27rem;
+      }
+    }
+  }
+
+  @include respond(m-phone) {
+    max-width: 30rem;
+  }
+}
+
+.ac-sub .ac-label:after, .ac-sub .ac-input:checked + .ac-label:after {
+  left: 0;
+  line-height: 3rem;
+  background: none;
+}
+
+.ac-sub .ac-input:checked + label, .ac-sub .ac-label:hover {
+  background: none;
+}
+
+.ac-popup p::before {
+  content: "\276F"; // "\203A" --slighty less pointed arrow
+  margin-right: .4rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+
+
+
+p {
+  margin: 1rem auto;
+  font-size: 1.6rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
